@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/IndiaMap/static/css/main.e7720ab7.css",
+    "main.js": "/IndiaMap/static/js/main.f5ff64f3.js",
+    "index.html": "/IndiaMap/index.html",
+    "main.e7720ab7.css.map": "/IndiaMap/static/css/main.e7720ab7.css.map",
+    "main.f5ff64f3.js.map": "/IndiaMap/static/js/main.f5ff64f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7720ab7.css",
+    "static/js/main.f5ff64f3.js"
+  ]
+}
