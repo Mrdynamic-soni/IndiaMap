@@ -1,20 +1,14 @@
-import {useState} from "react";
-import {Routes,Route} from "react-router-dom";
-import Upsvg from './Upsvg';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle';
 import { OverlayTrigger,Tooltip } from "react-bootstrap";
 import {  useNavigate } from 'react-router-dom';
-import { click } from "@testing-library/user-event/dist/click";
 
 
 const Imsvg = (props) => {
   const mHistory = useNavigate();
 
-  const [isHovering, setIsHovering] = useState(false);
   const mouseOutEvent=(e)=>{
   let clickid = "#"+e.target.id
-  setIsHovering(false);
   document.querySelector(clickid).style.strokeWidth = '1.5';
   document.querySelector(clickid).style.stroke="#1f1e1d";
 }
@@ -28,7 +22,6 @@ const doubleclickEvent =(e)=>{
 
 const mouseEventHandle =(e)=>{
   let clickid = "#"+e.target.id
-  setIsHovering(true);
   document.querySelector(clickid).style.strokeWidth = '2';
   document.querySelector(clickid).style.stroke="#d97179";
 }
