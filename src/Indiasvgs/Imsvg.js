@@ -1,10 +1,17 @@
+<<<<<<< HEAD:src/Indiasvgs/Imsvg.js
 import {useState} from "react";
 import "../Styles/IndiaMap.css"
+=======
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle';
+import { OverlayTrigger,Tooltip } from "react-bootstrap";
+>>>>>>> 8098624192f6b82bec66650116e01e9b714b6c4f:src/Icons/Imsvg.js
 import {  useNavigate } from 'react-router-dom';
 
 
 const Imsvg = (props) => {
   const mHistory = useNavigate();
+<<<<<<< HEAD:src/Indiasvgs/Imsvg.js
   const [state, setstate] = useState("")
   const [isHovering, setIsHovering] = useState(false);
   const toolTip = document.querySelector('.ToolTip')
@@ -14,6 +21,11 @@ const Imsvg = (props) => {
   toolTip.style.visibility = 'hidden'
   setstate('')
   setIsHovering(false);
+=======
+
+  const mouseOutEvent=(e)=>{
+  let clickid = "#"+e.target.id
+>>>>>>> 8098624192f6b82bec66650116e01e9b714b6c4f:src/Icons/Imsvg.js
   document.querySelector(clickid).style.strokeWidth = '1.5';
   document.querySelector(clickid).style.stroke="#1f1e1d";
 }
@@ -40,8 +52,12 @@ const mouseEventHandle =(e)=>{
   toolTip.style.left = `${e.pageX}px`
   toolTip.style.top =`${e.pageY}px`
   let clickid = "#"+e.target.id
+<<<<<<< HEAD:src/Indiasvgs/Imsvg.js
   setIsHovering(true);
   document.querySelector(clickid).style.strokeWidth = '3';
+=======
+  document.querySelector(clickid).style.strokeWidth = '2';
+>>>>>>> 8098624192f6b82bec66650116e01e9b714b6c4f:src/Icons/Imsvg.js
   document.querySelector(clickid).style.stroke="#d97179";
 }
 
