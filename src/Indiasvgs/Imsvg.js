@@ -1,14 +1,31 @@
+<<<<<<< HEAD:src/Indiasvgs/Imsvg.js
+import {useState} from "react";
+import "../Styles/IndiaMap.css"
+=======
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle';
 import { OverlayTrigger,Tooltip } from "react-bootstrap";
+>>>>>>> 8098624192f6b82bec66650116e01e9b714b6c4f:src/Icons/Imsvg.js
 import {  useNavigate } from 'react-router-dom';
 
 
 const Imsvg = (props) => {
   const mHistory = useNavigate();
+<<<<<<< HEAD:src/Indiasvgs/Imsvg.js
+  const [state, setstate] = useState("")
+  const [isHovering, setIsHovering] = useState(false);
+  const toolTip = document.querySelector('.ToolTip')
+  console.log(toolTip)
+  const mouseOutEvent=(e)=>{
+  let clickid = "#"+e.target.id
+  toolTip.style.visibility = 'hidden'
+  setstate('')
+  setIsHovering(false);
+=======
 
   const mouseOutEvent=(e)=>{
   let clickid = "#"+e.target.id
+>>>>>>> 8098624192f6b82bec66650116e01e9b714b6c4f:src/Icons/Imsvg.js
   document.querySelector(clickid).style.strokeWidth = '1.5';
   document.querySelector(clickid).style.stroke="#1f1e1d";
 }
@@ -17,16 +34,41 @@ const doubleclickEvent =(e)=>{
   let clickid = "#"+e.target.id;
   document.querySelector(clickid).style.strokeWidth = '6';
   document.querySelector(clickid).style.stroke="#ffffff";
-  mHistory('/StateRoute');
+  mHistory(`/StateRoute/${e.target.getAttribute('title')}`);
 }
 
+const handelclickEvent =(e)=>{
+  console.log(e)
+  let clickid = "#"+e.target.id;
+  document.querySelector(clickid).style.strokeWidth = '6';
+  document.querySelector(clickid).style.stroke="#ffffff";
+ 
+}
 const mouseEventHandle =(e)=>{
+  console.log(e.target.getAttribute('title'))
+  setstate(e.target.getAttribute('title'))
+  toolTip.style.visibility = 'visible'
+  console.log(e.pageX)
+  toolTip.style.left = `${e.pageX}px`
+  toolTip.style.top =`${e.pageY}px`
   let clickid = "#"+e.target.id
+<<<<<<< HEAD:src/Indiasvgs/Imsvg.js
+  setIsHovering(true);
+  document.querySelector(clickid).style.strokeWidth = '3';
+=======
   document.querySelector(clickid).style.strokeWidth = '2';
+>>>>>>> 8098624192f6b82bec66650116e01e9b714b6c4f:src/Icons/Imsvg.js
   document.querySelector(clickid).style.stroke="#d97179";
 }
 
   return (
+    <>
+  
+     <div className="ToolTip">
+    
+     { state}
+   </div>
+  
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsAmcharts="http://amcharts.com/ammap"
@@ -59,6 +101,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
       />
       <path
@@ -75,6 +118,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
         
@@ -93,6 +137,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -110,6 +155,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -129,6 +175,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -146,6 +193,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -163,6 +211,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -180,6 +229,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -197,6 +247,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -214,6 +265,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -231,6 +283,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -248,6 +301,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -265,6 +319,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -282,6 +337,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -299,6 +355,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -316,6 +373,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -333,6 +391,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -350,6 +409,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -367,6 +427,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -384,6 +445,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -401,6 +463,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -418,6 +481,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -435,6 +499,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -452,6 +517,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -469,6 +535,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -486,6 +553,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -503,6 +571,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -520,6 +589,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -537,6 +607,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -554,6 +625,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -571,6 +643,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -588,6 +661,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -605,13 +679,14 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
-        <OverlayTrigger
+        {/* <OverlayTrigger
           placement="top-end"
           overlay={<Tooltip style={{fontSize:25}} id="button-tooltip-2">Uttar-Pradesh</Tooltip>}
-        >
+        > */}
           <path
           id="IN-UP"
           title="Uttar Pradesh"
@@ -626,8 +701,9 @@ const mouseEventHandle =(e)=>{
           onMouseOut={mouseOutEvent}
           onMouseOver={mouseEventHandle}
           onDoubleClick={doubleclickEvent}
+          onClick={handelclickEvent}
           />
-        </OverlayTrigger>
+        {/* </OverlayTrigger> */}
       
     
       <path
@@ -644,6 +720,7 @@ const mouseEventHandle =(e)=>{
         onMouseOut={mouseOutEvent}
         onMouseOver={mouseEventHandle}
         onDoubleClick={doubleclickEvent}
+        onClick={handelclickEvent}
         
         
       />
@@ -655,6 +732,7 @@ const mouseEventHandle =(e)=>{
       />
     </g>
   </svg>
+  </>
 )};
 
 export default Imsvg;
