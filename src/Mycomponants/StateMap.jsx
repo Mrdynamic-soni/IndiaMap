@@ -7,6 +7,8 @@ import Jharkhand from '../Statesvgs/Jharkhand';
 import Rajasthan from '../Statesvgs/Rajsthan';
 import Punjab from '../Statesvgs/Punjab';
 import Bihar from '../Statesvgs/bihar';
+import Andaman from '../Statesvgs/Andaman';
+import Andhra from '../Statesvgs/Andhra';
 const States = () => {
     const params = useParams()
 
@@ -34,6 +36,13 @@ const States = () => {
         {params.id === "Bihar" && (
             <Bihar />
         )}
+        {params.id === "Andaman and Nicobar Islands" && (
+            <Andaman />
+        )}
+        {params.id === "Andhra Pradesh" && (
+            <Andhra />
+        )}
+
     </div>
   )
 }
