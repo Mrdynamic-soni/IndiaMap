@@ -6,9 +6,14 @@ import Himachal from '../Statesvgs/Himachal';
 import Jharkhand from '../Statesvgs/Jharkhand';
 import Rajasthan from '../Statesvgs/Rajsthan';
 import Punjab from '../Statesvgs/Punjab';
-import Bihar from '../Statesvgs/bihar';
+import Bihar from '../Statesvgs/Bihar';
 import Andaman from '../Statesvgs/Andaman';
 import Andhra from '../Statesvgs/Andhra';
+import Arunachal from '../Statesvgs/Arunachal';
+import Assam from '../Statesvgs/Assam';
+import Chhattisgarh from '../Statesvgs/Chhattisgarh';
+import Haryana from '../Statesvgs/Haryana';
+
 const States = () => {
     const params = useParams()
 
@@ -25,8 +30,7 @@ const States = () => {
         )}
         {params.id === "Jharkhand" && (
             <Jharkhand />
-        )}
-        
+        )} 
         {params.id === "Rajasthan" && (
             <Rajasthan />
         )}
@@ -42,7 +46,19 @@ const States = () => {
         {params.id === "Andhra Pradesh" && (
             <Andhra />
         )}
-
+        {params.id === "Arunachal Pradesh" && (
+            <Arunachal />
+        )}
+        {params.id === "Assam" && (
+            <Assam />
+        )}
+        {params.id === "Chhattisgarh" && (
+            <Chhattisgarh />
+        )}
+        {params.id === "Haryana" && (
+            <Haryana />
+        )}
+        
     </div>
   )
 }

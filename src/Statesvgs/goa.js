@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const SVGComponent = (props) => (
+const Goa = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
@@ -237,4 +237,4 @@ const SVGComponent = (props) => (
   </svg>
 );
 
-export default SVGComponent;
+export default Goa;
