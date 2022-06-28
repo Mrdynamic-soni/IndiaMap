@@ -13,6 +13,10 @@ import Arunachal from '../Statesvgs/Arunachal';
 import Assam from '../Statesvgs/Assam';
 import Chhattisgarh from '../Statesvgs/Chhattisgarh';
 import Haryana from '../Statesvgs/Haryana';
+import Kerala from '../Statesvgs/Kerala';
+import Jammu from '../Statesvgs/Jammu';
+import Karnataka from '../Statesvgs/Karnataka';
+import Maharashtra from '../Statesvgs/Maharashtra';
 
 const States = () => {
     const params = useParams()
@@ -57,6 +61,18 @@ const States = () => {
         )}
         {params.id === "Haryana" && (
             <Haryana />
+        )}
+        {params.id === "Kerala" && (
+            <Kerala />
+        )}
+        {params.id === "Jammu and Kashmir" && (
+            <Jammu />
+        )}
+        {params.id === "Karnataka" && (
+            <Karnataka />
+        )}
+        {params.id === "Maharashtra" && (
+            <Maharashtra />
         )}
         
     </div>
