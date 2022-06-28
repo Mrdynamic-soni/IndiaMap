@@ -1,5 +1,6 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
 import Upsvg from '../Statesvgs/Upsvg';
 import Gujarat from '../Statesvgs/Gujrat';
 import Himachal from '../Statesvgs/Himachal';
