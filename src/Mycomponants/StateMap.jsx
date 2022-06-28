@@ -25,12 +25,26 @@ import Meghalaya from '../Statesvgs/Meghalaya';
 import Mpsvg from '../Statesvgs/Mpsvg';
 import Tripura from '../Statesvgs/Tripura';
 import Odisha from '../Statesvgs/Odisha';
+import Goa from '../Statesvgs/Goa';
+import Telangana from '../Statesvgs/Telangala';
+import Nagaland from '../Statesvgs/Nagaland';
+import Mizoram from '../Statesvgs/Mizoram';
+import Tamilnadu from '../Statesvgs/Tamilnadu';
 
 const States = () => {
     const params = useParams()
 
   return (
     <div>
+        {params.id === 'Tamil Nadu' && (
+            <Tamilnadu />
+        )}
+        {params.id === 'Nagaland' && (
+            <Nagaland />
+        )}
+        {params.id === 'Mizoram' && (
+            <Mizoram />
+        )}
         {params.id === 'Uttar Pradesh' && (
             <Upsvg />
         )}
@@ -105,6 +119,12 @@ const States = () => {
         )}
         {params.id === 'Manipur' && (
             <Manipur />
+        )}
+        {params.id === 'Goa' && (
+            <Goa />
+        )}
+        {params.id === 'Telangana' && (
+            <Telangana />
         )}
         
     </div>
