@@ -17,6 +17,14 @@ import Kerala from '../Statesvgs/Kerala';
 import Jammu from '../Statesvgs/Jammu';
 import Karnataka from '../Statesvgs/Karnataka';
 import Maharashtra from '../Statesvgs/Maharashtra';
+import WestBengal from '../Statesvgs/WestBengal';
+import Uttarakhand from '../Statesvgs/Uttarakhand';
+import Sikkim from '../Statesvgs/Sikkim';
+import Manipur from '../Statesvgs/Manipur';
+import Meghalaya from '../Statesvgs/Meghalaya';
+import Mpsvg from '../Statesvgs/Mpsvg';
+import Tripura from '../Statesvgs/Tripura';
+import Odisha from '../Statesvgs/Odisha';
 
 const States = () => {
     const params = useParams()
@@ -73,6 +81,30 @@ const States = () => {
         )}
         {params.id === "Maharashtra" && (
             <Maharashtra />
+        )}
+        {params.id === 'Madhya Pradesh' && (
+            <Mpsvg />
+        )}
+        {params.id === 'Odisha' && (
+            <Odisha />
+        )}
+        {params.id === 'West Bengal' && (
+            <WestBengal />
+        )}
+        {params.id === 'Meghalaya' && (
+            <Meghalaya />
+        )}
+        {params.id === 'Sikkim' && (
+            <Sikkim />
+        )}
+        {params.id === 'Tripura' && (
+            <Tripura />
+        )}
+        {params.id === 'Uttarakhand' && (
+            <Uttarakhand />
+        )}
+        {params.id === 'Manipur' && (
+            <Manipur />
         )}
         
     </div>
