@@ -1,6 +1,35 @@
-import * as React from "react";
-const Himachal = (props) => (
-  <svg
+import React, { useState } from "react";
+const Himachal = (props) => {
+  const [state, setstate] = useState('');
+
+  const toolTip = document.querySelector('.ToolTip');
+  const mouseOutEvent = (e) => {
+    let clickid = '#' + e.target.id;
+    toolTip.style.visibility = 'hidden';
+    setstate('');
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '1.5';
+    document.querySelector(clickid).style.stroke = '#646464';
+  };
+
+
+
+  const mouseEventHandle = (e) => {
+    console.log(e.target.getAttribute('id'));
+    setstate(e.target.getAttribute('id'));
+    toolTip.style.visibility = 'visible';
+    console.log(e.pageX);
+    toolTip.style.left = `${e.pageX}px`;
+    toolTip.style.top = `${e.pageY}px`;
+    let clickid = '#' + e.target.id;
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '5';
+    document.querySelector(clickid).style.stroke = '#15dceb';
+  };
+return (
+  <>
+    <div className="ToolTip">{state}</div>
+    <svg
     xmlnsDc="http://purl.org/dc/elements/1.1/"
     xmlnsCc="http://creativecommons.org/ns#"
     xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -161,6 +190,8 @@ const Himachal = (props) => (
         /> */}
         <path
           id="Sirmaur"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -179,6 +210,8 @@ const Himachal = (props) => (
         />
         <path
           id="Una"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -197,6 +230,8 @@ const Himachal = (props) => (
         />
         <path
           id="Mandi"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -215,6 +250,8 @@ const Himachal = (props) => (
         />
         <path
           id="Hamirpur"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -233,6 +270,8 @@ const Himachal = (props) => (
         />
         <path
           id="Bilaspur"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -251,6 +290,8 @@ const Himachal = (props) => (
         />
         <path
           id="Solan"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -269,6 +310,8 @@ const Himachal = (props) => (
         />
         <path
           id="Shimla"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -287,6 +330,8 @@ const Himachal = (props) => (
         />
         <path
           id="Kullu"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -305,6 +350,8 @@ const Himachal = (props) => (
         />
         <path
           id="Kangra"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -323,6 +370,8 @@ const Himachal = (props) => (
         />
         <path
           id="Chamba"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -341,6 +390,8 @@ const Himachal = (props) => (
         />
         <path
           id="Kinnaur"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -359,6 +410,8 @@ const Himachal = (props) => (
         />
         <path
           id="Lahul_&_Spiti"
+          onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
           style={{
             display: "inline",
             fill: "#fefee9",
@@ -439,5 +492,7 @@ const Himachal = (props) => (
       </g>
     </g>
   </svg>
-);
+  </>
+)
+};
 export default Himachal;

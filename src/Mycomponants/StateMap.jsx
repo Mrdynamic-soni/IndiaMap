@@ -13,12 +13,38 @@ import Arunachal from '../Statesvgs/Arunachal';
 import Assam from '../Statesvgs/Assam';
 import Chhattisgarh from '../Statesvgs/Chhattisgarh';
 import Haryana from '../Statesvgs/Haryana';
+import Kerala from '../Statesvgs/Kerala';
+import Jammu from '../Statesvgs/Jammu';
+import Karnataka from '../Statesvgs/Karnataka';
+import Maharashtra from '../Statesvgs/Maharashtra';
+import WestBengal from '../Statesvgs/WestBengal';
+import Uttarakhand from '../Statesvgs/Uttarakhand';
+import Sikkim from '../Statesvgs/Sikkim';
+import Manipur from '../Statesvgs/Manipur';
+import Meghalaya from '../Statesvgs/Meghalaya';
+import Mpsvg from '../Statesvgs/Mpsvg';
+import Tripura from '../Statesvgs/Tripura';
+import Odisha from '../Statesvgs/Odisha';
+import Goa from '../Statesvgs/Goa';
+import Telangana from '../Statesvgs/Telangala';
+import Nagaland from '../Statesvgs/Nagaland';
+import Mizoram from '../Statesvgs/Mizoram';
+import Tamilnadu from '../Statesvgs/Tamilnadu';
 
 const States = () => {
     const params = useParams()
 
   return (
     <div>
+        {params.id === 'Tamil Nadu' && (
+            <Tamilnadu />
+        )}
+        {params.id === 'Nagaland' && (
+            <Nagaland />
+        )}
+        {params.id === 'Mizoram' && (
+            <Mizoram />
+        )}
         {params.id === 'Uttar Pradesh' && (
             <Upsvg />
         )}
@@ -57,6 +83,48 @@ const States = () => {
         )}
         {params.id === "Haryana" && (
             <Haryana />
+        )}
+        {params.id === "Kerala" && (
+            <Kerala />
+        )}
+        {params.id === "Jammu and Kashmir" && (
+            <Jammu />
+        )}
+        {params.id === "Karnataka" && (
+            <Karnataka />
+        )}
+        {params.id === "Maharashtra" && (
+            <Maharashtra />
+        )}
+        {params.id === 'Madhya Pradesh' && (
+            <Mpsvg />
+        )}
+        {params.id === 'Odisha' && (
+            <Odisha />
+        )}
+        {params.id === 'West Bengal' && (
+            <WestBengal />
+        )}
+        {params.id === 'Meghalaya' && (
+            <Meghalaya />
+        )}
+        {params.id === 'Sikkim' && (
+            <Sikkim />
+        )}
+        {params.id === 'Tripura' && (
+            <Tripura />
+        )}
+        {params.id === 'Uttarakhand' && (
+            <Uttarakhand />
+        )}
+        {params.id === 'Manipur' && (
+            <Manipur />
+        )}
+        {params.id === 'Goa' && (
+            <Goa />
+        )}
+        {params.id === 'Telangana' && (
+            <Telangana />
         )}
         
     </div>
