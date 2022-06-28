@@ -1,7 +1,40 @@
-import * as React from "react";
+import React, { useState } from 'react'
 
-const Tamilnadu = (props) => (
-  <svg
+const Tamilnadu = (props) => {
+  const [state, setstate] = useState('');
+
+  const toolTip = document.querySelector('.ToolTip');
+  const mouseOutEvent = (e) => {
+    let clickid = '#' + e.target.id;
+    toolTip.style.visibility = 'hidden';
+    setstate('');
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '1.5';
+    document.querySelector(clickid).style.stroke = '#FFF';
+  };
+
+  // const doubleclickEvent = (e) => {
+  //   let clickid = '#' + e.target.id;
+  //   document.querySelector(clickid).style.strokeWidth = '6';
+  //   document.querySelector(clickid).style.stroke = '#ffffff';
+  // };
+
+  const mouseEventHandle = (e) => {
+    console.log(e.target.getAttribute('id'));
+    setstate(e.target.getAttribute('id'));
+    toolTip.style.visibility = 'visible';
+    console.log(e.pageX);
+    toolTip.style.left = `${e.pageX}px`;
+    toolTip.style.top = `${e.pageY}px`;
+    let clickid = '#' + e.target.id;
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '5';
+    document.querySelector(clickid).style.stroke = '#15dceb';
+  };
+  return (
+    <>
+      <div className="ToolTip">{state}</div>
+      <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={900}
@@ -635,6 +668,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Chennai"
@@ -651,6 +686,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Coimbatore"
@@ -667,6 +704,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Cuddalore"
@@ -683,6 +722,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Dharmapuri"
@@ -699,6 +740,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Dindigul"
@@ -715,6 +758,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Erode"
@@ -731,6 +776,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Kancheepuram"
@@ -747,6 +794,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Kanniyakumari"
@@ -763,6 +812,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Karur"
@@ -779,6 +830,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Krishnagiri"
@@ -795,6 +848,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Madurai"
@@ -811,6 +866,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Nagappattinam"
@@ -827,6 +884,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Namakkal"
@@ -843,6 +902,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Perambalur"
@@ -859,6 +920,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Pudukkottai"
@@ -875,6 +938,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Ramanathapuram"
@@ -891,6 +956,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Salem"
@@ -907,6 +974,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Sivaganga"
@@ -923,6 +992,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Thanjavur"
@@ -939,6 +1010,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="The Nilgiris"
@@ -955,6 +1028,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Theni"
@@ -971,6 +1046,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Thiruvallur"
@@ -987,6 +1064,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Thiruvarur"
@@ -1003,6 +1082,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Thoothukkudi"
@@ -1019,6 +1100,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Tiruchirappalli"
@@ -1035,6 +1118,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Tirunelveli"
@@ -1051,6 +1136,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Tiruppur"
@@ -1067,6 +1154,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Tiruvannamalai"
@@ -1083,6 +1172,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Vellore"
@@ -1099,6 +1190,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Viluppuram"
@@ -1115,6 +1208,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
     <path
       id="Virudunagar"
@@ -1131,6 +1226,8 @@ const Tamilnadu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-67.49996185302734,-45.00000762939453)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+        onMouseOver={mouseEventHandle}
     />
   
     <defs>
@@ -1153,6 +1250,8 @@ const Tamilnadu = (props) => (
     </defs>
 
   </svg>
-);
+    </>
+  )
+}
 
-export default Tamilnadu;
+export default Tamilnadu

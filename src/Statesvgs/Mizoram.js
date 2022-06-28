@@ -1,7 +1,40 @@
-import * as React from "react"
+import React, { useState } from 'react'
 
-const Mizoram = (props) => (
-  <svg
+const Mizoram = (props) => {
+    const [state, setstate] = useState('');
+
+    const toolTip = document.querySelector('.ToolTip');
+    const mouseOutEvent = (e) => {
+      let clickid = '#' + e.target.id;
+      toolTip.style.visibility = 'hidden';
+      setstate('');
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '1.5';
+      document.querySelector(clickid).style.stroke = '#FFF';
+    };
+  
+    // const doubleclickEvent = (e) => {
+    //   let clickid = '#' + e.target.id;
+    //   document.querySelector(clickid).style.strokeWidth = '6';
+    //   document.querySelector(clickid).style.stroke = '#ffffff';
+    // };
+  
+    const mouseEventHandle = (e) => {
+      console.log(e.target.getAttribute('id'));
+      setstate(e.target.getAttribute('id'));
+      toolTip.style.visibility = 'visible';
+      console.log(e.pageX);
+      toolTip.style.left = `${e.pageX}px`;
+      toolTip.style.top = `${e.pageY}px`;
+      let clickid = '#' + e.target.id;
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '5';
+      document.querySelector(clickid).style.stroke = '#15dceb';
+    };
+    return (
+      <>
+      <div className="ToolTip">{state}</div>
+      <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={800}
@@ -170,6 +203,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Champhai"
@@ -185,6 +220,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kolasib"
@@ -200,6 +237,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Lawangtlai"
@@ -215,6 +254,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Lunglei"
@@ -230,6 +271,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Mamit"
@@ -245,6 +288,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Saiha"
@@ -260,6 +305,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Serchhip"
@@ -275,6 +322,8 @@ const Mizoram = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <defs>
       <filter id="f1" x="-100%" y="-100%" width="1000%" height="1000%">
@@ -295,6 +344,8 @@ const Mizoram = (props) => (
       </filter>
     </defs>
   </svg>
-)
+    </>
+  )
+}
 
-export default Mizoram;
+export default Mizoram

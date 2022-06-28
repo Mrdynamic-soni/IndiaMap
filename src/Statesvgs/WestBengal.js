@@ -1,7 +1,40 @@
-import * as React from "react";
+import React, { useState } from 'react'
 
-const WestBengal = (props) => (
-  <svg
+const WestBengal = (props) => {
+    const [state, setstate] = useState('');
+
+    const toolTip = document.querySelector('.ToolTip');
+    const mouseOutEvent = (e) => {
+      let clickid = '#' + e.target.id;
+      toolTip.style.visibility = 'hidden';
+      setstate('');
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '1.5';
+      document.querySelector(clickid).style.stroke = '#FFF';
+    };
+  
+    // const doubleclickEvent = (e) => {
+    //   let clickid = '#' + e.target.id;
+    //   document.querySelector(clickid).style.strokeWidth = '6';
+    //   document.querySelector(clickid).style.stroke = '#ffffff';
+    // };
+  
+    const mouseEventHandle = (e) => {
+      console.log(e.target.getAttribute('id'));
+      setstate(e.target.getAttribute('id'));
+      toolTip.style.visibility = 'visible';
+      console.log(e.pageX);
+      toolTip.style.left = `${e.pageX}px`;
+      toolTip.style.top = `${e.pageY}px`;
+      let clickid = '#' + e.target.id;
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '5';
+      document.querySelector(clickid).style.stroke = '#15dceb';
+    };
+    return (
+      <>
+        <div className="ToolTip">{state}</div>
+      <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={800}
@@ -407,6 +440,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bankura"
@@ -423,6 +458,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Barddhaman"
@@ -439,6 +476,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Birbhum"
@@ -455,6 +494,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dakshin Dinajpur"
@@ -471,6 +512,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Darjiling"
@@ -487,6 +530,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Haora"
@@ -503,6 +548,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Hugli"
@@ -519,6 +566,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jalpaiguri"
@@ -535,6 +584,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Koch Bihar"
@@ -551,6 +602,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kolkata"
@@ -567,6 +620,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Maldah"
@@ -583,6 +638,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Murshidabad"
@@ -599,6 +656,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Nadia"
@@ -615,6 +674,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="North 24 Parganas"
@@ -631,6 +692,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Pashchim Medinipur"
@@ -647,6 +710,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Purba Medinipur"
@@ -663,6 +728,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Puruliya"
@@ -679,6 +746,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="South 24 Parganas"
@@ -695,6 +764,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Uttar Dinajpur"
@@ -711,6 +782,8 @@ const WestBengal = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.00001335144043,-13.324999809265137)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <defs>
       <filter id="f1" x="-100%" y="-100%" width="1000%" height="1000%">
@@ -732,6 +805,8 @@ const WestBengal = (props) => (
     </defs>
     
   </svg>
-);
+    </>
+  )
+}
 
-export default WestBengal;
+export default WestBengal

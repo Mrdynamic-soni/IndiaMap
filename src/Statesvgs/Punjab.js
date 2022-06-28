@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SVGComponent = (props) => {
+const Punjab = (props) => {
   const [state, setstate] = useState('');
 
   const toolTip = document.querySelector('.ToolTip');
@@ -10,7 +10,7 @@ const SVGComponent = (props) => {
     setstate('');
     console.log(clickid);
     document.querySelector(clickid).style.strokeWidth = '1.5';
-    document.querySelector(clickid).style.stroke = "#000000";
+    document.querySelector(clickid).style.stroke = '#FFF';
   };
 
   // const doubleclickEvent = (e) => {
@@ -858,4 +858,4 @@ return (
   );
 };
 
-export default SVGComponent;
+export default Punjab;

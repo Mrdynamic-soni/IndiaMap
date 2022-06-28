@@ -10,7 +10,7 @@ const Andhra = (props) => {
     setstate('');
     console.log(clickid);
     document.querySelector(clickid).style.strokeWidth = '1.5';
-    document.querySelector(clickid).style.stroke = "#000";
+    document.querySelector(clickid).style.stroke = '#FFF';
   };
 
   // const doubleclickEvent = (e) => {

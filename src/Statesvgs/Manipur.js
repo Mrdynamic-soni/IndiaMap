@@ -1,7 +1,40 @@
-import * as React from "react";
+import React, { useState } from 'react'
 
-const Manipur = (props) => (
-  <svg
+const Manipur = (props) => {
+    const [state, setstate] = useState('');
+
+    const toolTip = document.querySelector('.ToolTip');
+    const mouseOutEvent = (e) => {
+      let clickid = '#' + e.target.id;
+      toolTip.style.visibility = 'hidden';
+      setstate('');
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '1.5';
+      document.querySelector(clickid).style.stroke = '#FFF';
+    };
+  
+    // const doubleclickEvent = (e) => {
+    //   let clickid = '#' + e.target.id;
+    //   document.querySelector(clickid).style.strokeWidth = '6';
+    //   document.querySelector(clickid).style.stroke = '#ffffff';
+    // };
+  
+    const mouseEventHandle = (e) => {
+      console.log(e.target.getAttribute('id'));
+      setstate(e.target.getAttribute('id'));
+      toolTip.style.visibility = 'visible';
+      console.log(e.pageX);
+      toolTip.style.left = `${e.pageX}px`;
+      toolTip.style.top = `${e.pageY}px`;
+      let clickid = '#' + e.target.id;
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '5';
+      document.querySelector(clickid).style.stroke = '#15dceb';
+    };
+    return (
+      <>
+        <div className="ToolTip">{state}</div>
+      <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={800}
@@ -198,6 +231,8 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chandel"
@@ -214,6 +249,8 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Churachandpu"
@@ -230,6 +267,8 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Imphal East"
@@ -246,6 +285,8 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Imphal West"
@@ -262,6 +303,8 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Senapati"
@@ -278,6 +321,8 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Tamenglong"
@@ -294,6 +339,8 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Thoubal"
@@ -310,10 +357,14 @@ const Manipur = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.149999976158142,0,0,1.149999976158142,-60.000030517578125,-39.975040435791016)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     
 
   </svg>
-);
+    </>
+  )
+}
 
-export default Manipur;
+export default Manipur
