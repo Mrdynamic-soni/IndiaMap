@@ -11,7 +11,7 @@ const Gujarat = (props) => {
     setstate('');
     console.log(clickid);
     document.querySelector(clickid).style.strokeWidth = '1.5';
-    document.querySelector(clickid).style.stroke = 'rgb(255, 255, 255)';
+    document.querySelector(clickid).style.stroke = '#1f1e1d';
   };
 
   // const doubleclickEvent = (e) => {

@@ -1,7 +1,40 @@
-import * as React from "react";
+import React, { useState } from 'react'
 
-const Karnataka = (props) => (
-  <svg
+const Karnataka = (props) => {
+    const [state, setstate] = useState('');
+
+    const toolTip = document.querySelector('.ToolTip');
+    const mouseOutEvent = (e) => {
+      let clickid = '#' + e.target.id;
+      toolTip.style.visibility = 'hidden';
+      setstate('');
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '1.5';
+      document.querySelector(clickid).style.stroke = '#FFF';
+    };
+  
+    // const doubleclickEvent = (e) => {
+    //   let clickid = '#' + e.target.id;
+    //   document.querySelector(clickid).style.strokeWidth = '6';
+    //   document.querySelector(clickid).style.stroke = '#ffffff';
+    // };
+  
+    const mouseEventHandle = (e) => {
+      console.log(e.target.getAttribute('id'));
+      setstate(e.target.getAttribute('id'));
+      toolTip.style.visibility = 'visible';
+      console.log(e.pageX);
+      toolTip.style.left = `${e.pageX}px`;
+      toolTip.style.top = `${e.pageY}px`;
+      let clickid = '#' + e.target.id;
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '5';
+      document.querySelector(clickid).style.stroke = '#15dceb';
+    };
+    return (
+      <>
+        <div className="ToolTip">{state}</div>
+      <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={800}
@@ -597,6 +630,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bangalore"
@@ -613,6 +648,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bangalore Rural"
@@ -629,6 +666,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Belgaum"
@@ -645,6 +684,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bellary"
@@ -661,6 +702,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bidar"
@@ -677,6 +720,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bijapur"
@@ -693,6 +738,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chamrajnagar"
@@ -709,6 +756,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chikballapura"
@@ -725,6 +774,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chikmagalur"
@@ -741,6 +792,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chitradurga"
@@ -757,6 +810,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dakshina Kannada"
@@ -773,6 +828,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Davanagere"
@@ -789,6 +846,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dharwad"
@@ -805,6 +864,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Gadag"
@@ -821,6 +882,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Gulbarga"
@@ -837,6 +900,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Hassan"
@@ -853,6 +918,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Haveri"
@@ -869,6 +936,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kodagu"
@@ -885,6 +954,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kolar"
@@ -901,6 +972,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Koppal"
@@ -917,6 +990,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Mandya"
@@ -933,6 +1008,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Mysore"
@@ -949,6 +1026,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Raichur"
@@ -965,6 +1044,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Ramanagara"
@@ -981,6 +1062,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Shimoga"
@@ -997,6 +1080,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Tumkur"
@@ -1013,6 +1098,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Udupi"
@@ -1029,6 +1116,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Uttara_Kannada"
@@ -1045,6 +1134,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Yadgir"
@@ -1061,6 +1152,8 @@ const Karnataka = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-40.000022888183594,-26.650001525878906)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <defs>
       <filter id="f1" x="-100%" y="-100%" width="1000%" height="1000%">
@@ -1081,6 +1174,8 @@ const Karnataka = (props) => (
       </filter>
     </defs>
   </svg>
-);
+    </>
+  )
+}
 
-export default Karnataka;
+export default Karnataka

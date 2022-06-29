@@ -9,10 +9,14 @@ const Himachal = (props) => {
     setstate('');
     console.log(clickid);
     document.querySelector(clickid).style.strokeWidth = '1.5';
-    document.querySelector(clickid).style.stroke = '#646464';
+    document.querySelector(clickid).style.stroke = '#FFF';
   };
 
-
+  // const doubleclickEvent = (e) => {
+  //   let clickid = '#' + e.target.id;
+  //   document.querySelector(clickid).style.strokeWidth = '6';
+  //   document.querySelector(clickid).style.stroke = '#ffffff';
+  // };
 
   const mouseEventHandle = (e) => {
     console.log(e.target.getAttribute('id'));

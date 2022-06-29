@@ -1,6 +1,40 @@
-import * as React from "react";
-const Tripura = (props) => (
-  <svg
+import React, { useState } from 'react'
+
+const Tripura = (props) => {
+    const [state, setstate] = useState('');
+
+    const toolTip = document.querySelector('.ToolTip');
+    const mouseOutEvent = (e) => {
+      let clickid = '#' + e.target.id;
+      toolTip.style.visibility = 'hidden';
+      setstate('');
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '1.5';
+      document.querySelector(clickid).style.stroke = '#FFF';
+    };
+  
+    // const doubleclickEvent = (e) => {
+    //   let clickid = '#' + e.target.id;
+    //   document.querySelector(clickid).style.strokeWidth = '6';
+    //   document.querySelector(clickid).style.stroke = '#ffffff';
+    // };
+  
+    const mouseEventHandle = (e) => {
+      console.log(e.target.getAttribute('id'));
+      setstate(e.target.getAttribute('id'));
+      toolTip.style.visibility = 'visible';
+      console.log(e.pageX);
+      toolTip.style.left = `${e.pageX}px`;
+      toolTip.style.top = `${e.pageY}px`;
+      let clickid = '#' + e.target.id;
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '5';
+      document.querySelector(clickid).style.stroke = '#15dceb';
+    };
+    return (
+      <>
+        <div className="ToolTip">{state}</div>
+      <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={800}
@@ -160,6 +194,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Gomati"
@@ -176,6 +212,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Khowai"
@@ -192,6 +230,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="North Tripura"
@@ -208,6 +248,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sipahijala"
@@ -224,6 +266,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="South_Tripura"
@@ -240,6 +284,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Unokoti"
@@ -256,6 +302,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="West Tripura"
@@ -272,6 +320,8 @@ const Tripura = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.0000057220459,-13.32500171661377)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
    
     <defs>
@@ -294,5 +344,8 @@ const Tripura = (props) => (
     </defs>
    
   </svg>
-);
-export default Tripura;
+    </>
+  )
+}
+
+export default Tripura

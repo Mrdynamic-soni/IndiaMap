@@ -1,6 +1,39 @@
-import * as React from "react";
+import React, { useState } from 'react'
 
-const Mpsvg = (props) => (
+const MpSvg = (props) => {
+  const [state, setstate] = useState('');
+
+  const toolTip = document.querySelector('.ToolTip');
+  const mouseOutEvent = (e) => {
+    let clickid = '#' + e.target.id;
+    toolTip.style.visibility = 'hidden';
+    setstate('');
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '1.5';
+    document.querySelector(clickid).style.stroke = '#FFF';
+  };
+
+  // const doubleclickEvent = (e) => {
+  //   let clickid = '#' + e.target.id;
+  //   document.querySelector(clickid).style.strokeWidth = '6';
+  //   document.querySelector(clickid).style.stroke = '#ffffff';
+  // };
+
+  const mouseEventHandle = (e) => {
+    console.log(e.target.getAttribute('id'));
+    setstate(e.target.getAttribute('id'));
+    toolTip.style.visibility = 'visible';
+    console.log(e.pageX);
+    toolTip.style.left = `${e.pageX}px`;
+    toolTip.style.top = `${e.pageY}px`;
+    let clickid = '#' + e.target.id;
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '5';
+    document.querySelector(clickid).style.stroke = '#15dceb';
+  };
+  return (
+    <>
+      <div className="ToolTip">{state}</div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
@@ -944,6 +977,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Alirajpur"
@@ -959,6 +994,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Anuppur"
@@ -974,6 +1011,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Ashoknagar"
@@ -989,6 +1028,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Balaghat"
@@ -1004,6 +1045,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Barwani"
@@ -1019,6 +1062,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Betul"
@@ -1034,6 +1079,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bhind"
@@ -1049,6 +1096,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bhopal"
@@ -1064,6 +1113,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Burhanpur"
@@ -1079,6 +1130,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chhatarpur"
@@ -1094,6 +1147,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chhindwara"
@@ -1109,6 +1164,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Damoh"
@@ -1124,6 +1181,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Datia"
@@ -1139,6 +1198,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dewas"
@@ -1154,6 +1215,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dhar"
@@ -1169,6 +1232,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dindori"
@@ -1184,6 +1249,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="East Nimar"
@@ -1199,6 +1266,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Guna"
@@ -1214,6 +1283,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Gwalior"
@@ -1229,6 +1300,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Harda"
@@ -1244,6 +1317,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Hoshangabad"
@@ -1259,6 +1334,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Indore"
@@ -1274,6 +1351,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jabalpur"
@@ -1289,6 +1368,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jhabua"
@@ -1304,6 +1385,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Katni"
@@ -1319,6 +1402,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Mandla"
@@ -1334,6 +1419,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Mandsaur"
@@ -1349,6 +1436,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Morena"
@@ -1364,6 +1453,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Narsimhapur"
@@ -1379,6 +1470,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Neemuch"
@@ -1394,6 +1487,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Panna"
@@ -1409,6 +1504,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Raisen"
@@ -1424,6 +1521,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Rajgarh"
@@ -1439,6 +1538,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Ratlam"
@@ -1454,6 +1555,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Rewa"
@@ -1469,6 +1572,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sagar"
@@ -1484,6 +1589,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Satna"
@@ -1499,6 +1606,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sehore"
@@ -1514,6 +1623,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Seoni"
@@ -1529,6 +1640,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Shahdol"
@@ -1544,6 +1657,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Shajapur"
@@ -1559,6 +1674,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sheopur"
@@ -1574,6 +1691,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Shivpuri"
@@ -1589,6 +1708,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sidhi"
@@ -1604,6 +1725,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Singrauli"
@@ -1619,6 +1742,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Tikamgarh"
@@ -1634,6 +1759,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Ujjain"
@@ -1649,6 +1776,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Umaria"
@@ -1664,6 +1793,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Vidisha"
@@ -1679,6 +1810,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="West Nimar"
@@ -1694,6 +1827,8 @@ const Mpsvg = (props) => (
       strokeLinejoin="miter"
       strokeMiterlimit={10}
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
    
    
@@ -1717,6 +1852,8 @@ const Mpsvg = (props) => (
     </defs>
    
   </svg>
-);
+    </>
+  )
+}
 
-export default Mpsvg;
+export default MpSvg

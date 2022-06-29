@@ -1,7 +1,40 @@
-import * as React from "react";
-const Assam = (props) => (
-  
-  <svg
+import React, { useState } from 'react'
+
+const Assam = (props) => {
+  const [state, setstate] = useState('');
+
+  const toolTip = document.querySelector('.ToolTip');
+  const mouseOutEvent = (e) => {
+    let clickid = '#' + e.target.id;
+    toolTip.style.visibility = 'hidden';
+    setstate('');
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '1.5';
+    document.querySelector(clickid).style.stroke = '#FFF';
+  };
+
+  // const doubleclickEvent = (e) => {
+  //   let clickid = '#' + e.target.id;
+  //   document.querySelector(clickid).style.strokeWidth = '6';
+  //   document.querySelector(clickid).style.stroke = '#ffffff';
+  // };
+
+  const mouseEventHandle = (e) => {
+    console.log(e.target.getAttribute('id'));
+    setstate(e.target.getAttribute('id'));
+    toolTip.style.visibility = 'visible';
+    console.log(e.pageX);
+    toolTip.style.left = `${e.pageX}px`;
+    toolTip.style.top = `${e.pageY}px`;
+    let clickid = '#' + e.target.id;
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '5';
+    document.querySelector(clickid).style.stroke = '#15dceb';
+  };
+  return (
+    <>
+    <div className="ToolTip">{state}</div>
+    <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={800}
@@ -484,6 +517,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Barpeta"
@@ -500,6 +535,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bongaigaon"
@@ -516,6 +553,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Cachar"
@@ -532,6 +571,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Chirang"
@@ -548,6 +589,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Darrang"
@@ -564,6 +607,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dhemaji"
@@ -580,6 +625,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dhubri"
@@ -596,6 +643,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dibrugarh"
@@ -612,6 +661,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dima Hasao"
@@ -628,6 +679,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Goalpara"
@@ -644,6 +697,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Golaghat"
@@ -660,6 +715,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Hailakandi"
@@ -676,6 +733,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jorhat"
@@ -692,6 +751,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kamrup"
@@ -708,6 +769,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kamrup Metropolitan"
@@ -724,6 +787,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Karbi Anglong"
@@ -740,6 +805,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Karimganj"
@@ -756,6 +823,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kokrajhar"
@@ -772,6 +841,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Lakhimpur"
@@ -788,6 +859,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Morigaon"
@@ -804,6 +877,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Nagaon"
@@ -820,6 +895,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Nalbari"
@@ -836,6 +913,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sivasagar"
@@ -852,6 +931,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sonitpur"
@@ -868,6 +949,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Tinsukia"
@@ -884,6 +967,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Udalguri"
@@ -900,6 +985,8 @@ const Assam = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.100000023841858,0,0,1.100000023841858,-39.99996566772461,-26.649991989135742)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <defs>
       <filter id="f1" x="-100%" y="-100%" width="1000%" height="1000%">
@@ -921,5 +1008,8 @@ const Assam = (props) => (
     </defs>
     
   </svg>
-);
-export default Assam;
+    </>
+  )
+}
+
+export default Assam

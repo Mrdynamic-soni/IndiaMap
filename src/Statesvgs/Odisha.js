@@ -1,6 +1,39 @@
-import * as React from "react";
+import React, { useState } from 'react'
 
-const Odisha = (props) => (
+const Odisha = (props) => {
+  const [state, setstate] = useState('');
+
+  const toolTip = document.querySelector('.ToolTip');
+  const mouseOutEvent = (e) => {
+    let clickid = '#' + e.target.id;
+    toolTip.style.visibility = 'hidden';
+    setstate('');
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '1.5';
+    document.querySelector(clickid).style.stroke = '#FFF';
+  };
+
+  // const doubleclickEvent = (e) => {
+  //   let clickid = '#' + e.target.id;
+  //   document.querySelector(clickid).style.strokeWidth = '6';
+  //   document.querySelector(clickid).style.stroke = '#ffffff';
+  // };
+
+  const mouseEventHandle = (e) => {
+    console.log(e.target.getAttribute('id'));
+    setstate(e.target.getAttribute('id'));
+    toolTip.style.visibility = 'visible';
+    console.log(e.pageX);
+    toolTip.style.left = `${e.pageX}px`;
+    toolTip.style.top = `${e.pageY}px`;
+    let clickid = '#' + e.target.id;
+    console.log(clickid);
+    document.querySelector(clickid).style.strokeWidth = '5';
+    document.querySelector(clickid).style.stroke = '#15dceb';
+  };
+  return (
+    <>
+      <div className="ToolTip">{state}</div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
@@ -597,6 +630,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Balangir"
@@ -613,6 +648,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Baleshwar"
@@ -629,6 +666,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bargarh"
@@ -645,6 +684,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bauda"
@@ -661,6 +702,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bhadrak"
@@ -677,6 +720,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Cuttack"
@@ -693,6 +738,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Debagarh"
@@ -709,6 +756,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Dhenkanal"
@@ -725,6 +774,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Gajapati"
@@ -741,6 +792,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Ganjam"
@@ -757,6 +810,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jagatsinghapur"
@@ -773,6 +828,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jajapur"
@@ -789,6 +846,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jharsuguda"
@@ -805,6 +864,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kalahandi"
@@ -821,6 +882,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kandhamal"
@@ -837,6 +900,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kendrapara"
@@ -853,6 +918,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Kendujhar"
@@ -869,6 +936,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Khordha"
@@ -885,6 +954,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Koraput"
@@ -901,6 +972,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Malkangiri"
@@ -917,6 +990,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Mayurbhanj"
@@ -933,6 +1008,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Nabarangapur"
@@ -949,6 +1026,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Nayagarh"
@@ -965,6 +1044,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Nuapada"
@@ -981,6 +1062,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Puri"
@@ -997,6 +1080,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Rayagada"
@@ -1013,6 +1098,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sambalpur"
@@ -1029,6 +1116,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Subarnapur"
@@ -1045,6 +1134,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Sundargarh"
@@ -1061,6 +1152,8 @@ const Odisha = (props) => (
       strokeMiterlimit={10}
       transform="matrix(1.0499999523162842,0,0,1.0499999523162842,-20.000009536743164,-13.32499885559082)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     
     <defs>
@@ -1083,6 +1176,8 @@ const Odisha = (props) => (
     </defs>
    
   </svg>
-);
+    </>
+  )
+}
 
-export default Odisha;
+export default Odisha
