@@ -1,7 +1,40 @@
-import * as React from "react";
+import React, { useState } from 'react'
 
-const Jammu = (props) => (
-  <svg
+const JammuKashmir = (props) => {
+    const [state, setstate] = useState('');
+
+    const toolTip = document.querySelector('.ToolTip');
+    const mouseOutEvent = (e) => {
+      let clickid = '#' + e.target.id;
+      toolTip.style.visibility = 'hidden';
+      setstate('');
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '1.5';
+      document.querySelector(clickid).style.stroke = '#FFF';
+    };
+  
+    // const doubleclickEvent = (e) => {
+    //   let clickid = '#' + e.target.id;
+    //   document.querySelector(clickid).style.strokeWidth = '6';
+    //   document.querySelector(clickid).style.stroke = '#ffffff';
+    // };
+  
+    const mouseEventHandle = (e) => {
+      console.log(e.target.getAttribute('id'));
+      setstate(e.target.getAttribute('id'));
+      toolTip.style.visibility = 'visible';
+      console.log(e.pageX);
+      toolTip.style.left = `${e.pageX}px`;
+      toolTip.style.top = `${e.pageY}px`;
+      let clickid = '#' + e.target.id;
+      console.log(clickid);
+      document.querySelector(clickid).style.strokeWidth = '5';
+      document.querySelector(clickid).style.stroke = '#15dceb';
+    };
+    return (
+      <>
+        <div className="ToolTip">{state}</div>
+      <svg
     xmlns="http://www.w3.org/2000/svg"
     baseProfile="full"
     width={800}
@@ -423,6 +456,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Badgam"
@@ -439,6 +474,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Bandipore"
@@ -455,6 +492,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Baramulla"
@@ -471,6 +510,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Doda"
@@ -487,6 +528,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Ganderbal"
@@ -503,6 +546,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+      onMouseOut={mouseOutEvent}
+      onMouseOver={mouseEventHandle}
     />
     <path
       id="Jammu"
@@ -519,6 +564,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Kargil"
@@ -535,6 +582,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Kathua"
@@ -551,6 +600,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Kishtwar"
@@ -567,6 +618,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Kulgam"
@@ -583,6 +636,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Kupwara"
@@ -599,6 +654,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Leh (Ladakh)"
@@ -615,6 +672,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Poonch"
@@ -631,6 +690,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
     id="Pulwama"
@@ -647,6 +708,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Rajouri"
@@ -663,6 +726,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Ramban"
@@ -679,6 +744,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Reasi"
@@ -695,6 +762,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Samba"
@@ -711,6 +780,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Shupiyan"
@@ -727,6 +798,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Srinagar"
@@ -743,6 +816,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       id="Udhampur"
@@ -759,6 +834,8 @@ const Jammu = (props) => (
       strokeMiterlimit={10}
       transform="matrix(0.949999988079071,0,0,0.949999988079071,19.999998092651367,13.324989318847656)"
       clipPath="none"
+       onMouseOut={mouseOutEvent}
+          onMouseOver={mouseEventHandle}
     />
     <path
       d="M -5 -5 L 89.5156 -5 L 89.5156 115 L -5 115 L -5 -5 Z"
@@ -793,7 +870,10 @@ const Jammu = (props) => (
         <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
       </filter>
     </defs>
-  </svg>
-);
 
-export default Jammu;
+  </svg>
+    </>
+  )
+}
+
+export default JammuKashmir

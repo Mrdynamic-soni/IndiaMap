@@ -27,7 +27,7 @@ import Mpsvg from '../Statesvgs/Mpsvg';
 import Tripura from '../Statesvgs/Tripura';
 import Odisha from '../Statesvgs/Odisha';
 import Goa from '../Statesvgs/Goa';
-import Telangana from '../Statesvgs/Telangala';
+import Telangana from '../Statesvgs/Telangana';
 import Nagaland from '../Statesvgs/Nagaland';
 import Mizoram from '../Statesvgs/Mizoram';
 import Tamilnadu from '../Statesvgs/Tamilnadu';
